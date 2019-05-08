@@ -18,7 +18,7 @@ class Thecao extends Model
      * Fillables
      */
     
-    protected $fillable = ['name', 'content', 'status'];
+    protected $fillable = ['uid', 'loaithe', 'serial', 'mathe', 'menhgia', 'thucnhan', 'shop', 'api', 'mathe', 'return_code', 'status'];
 
     /*
      * Soft Deletes
