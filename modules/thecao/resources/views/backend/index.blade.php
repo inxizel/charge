@@ -29,10 +29,12 @@
                 <thead>
                 <tr>
                     <th class="wd-5p">@lang('global.order')</th>
-                    <th class="wd-10p">Uid</th>
                     <th class="wd-10p">Serial</th>
                     <th class="wd-10p">Mã thẻ</th>
-                    <th class="wd-5p">Api</th>
+                    <th class="wd-5p">Loại thẻ</th>
+                    <th class="wd-5p">Mệnh giá</th>
+                    <th class="wd-10p">Api</th>
+                    <th class="wd-5p">Status</th>
                     <th class="wd-15p">@lang('global.action')</th>
                 </tr>
                 </thead>
@@ -61,9 +63,12 @@
                 searching: true,
                 columns: [
                     {data: 'DT_RowIndex', className: 'tx-center', searchable: false},
-                    {data: 'name'},
-                    {data: 'content'},
-                    {data: 'status', className: 'tx-center'},
+                    {data: 'serial'},
+                    {data: 'mathe'},
+                    {data: 'loaithe', className: 'tx-center'},
+                    {data: 'menhgia'},
+                    {data: 'api'},
+
                     {data: 'created_at', className: 'tx-center'},
                     {data: 'action', className: 'tx-center'},
                 ],

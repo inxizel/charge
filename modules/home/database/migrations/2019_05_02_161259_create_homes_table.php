@@ -13,14 +13,14 @@ class CreateHomesTable extends Migration
      */
     public function up()
     {
-        Schema::create('homes', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name')->nullable()->comment('Home name');
-            $table->text('content')->nullable()->comment('Home content');
-            $table->tinyInteger('status')->default(1)->comment('0: hide, 1: show');
-            $table->timestamps();
-            $table->softDeletes();
-        });
+        // Schema::create('homes', function (Blueprint $table) {
+        //     $table->increments('id');
+        //     $table->string('name')->nullable()->comment('Home name');
+        //     $table->text('content')->nullable()->comment('Home content');
+        //     $table->tinyInteger('status')->default(1)->comment('0: hide, 1: show');
+        //     $table->timestamps();
+        //     $table->softDeletes();
+        // });
     }
 
     /**
@@ -30,6 +30,6 @@ class CreateHomesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('homes');
+        // Schema::dropIfExists('homes');
     }
 }
