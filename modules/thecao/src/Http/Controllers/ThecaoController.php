@@ -161,6 +161,26 @@ class ThecaoController extends Controller
 
                 return $txt;
             })
+            ->editColumn('loaithe', function ($thecao) {
+                switch ($thecao->loaithe) {
+                    case '1':
+                        $loaithe = 'Viettel'
+                        break;
+                    case '2':
+                        $loaithe = 'Mobi'
+                        break;
+                    case '3':
+                        $loaithe = 'Vina'
+                        break;
+                    default:
+                        # code...
+                        break;
+                }
+                return $loaithe;
+            })
+            ->editColumn('menhgia', function ($thecao) {
+                return number_format($thecao->menhgia);
+            })
             ->editColumn('created_at', function ($thecao) {
                 return date('H:i | d-m-Y', strtotime($thecao->created_at));
             })

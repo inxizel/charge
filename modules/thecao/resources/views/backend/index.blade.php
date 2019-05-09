@@ -33,9 +33,9 @@
                     <th class="wd-10p">Mã thẻ</th>
                     <th class="wd-5p">Loại thẻ</th>
                     <th class="wd-5p">Mệnh giá</th>
-                    <th class="wd-10p">Api</th>
+                    <th class="wd-5p">Api</th>
                     <th class="wd-5p">Status</th>
-                    <th class="wd-15p">@lang('global.action')</th>
+                    <th class="wd-10p">@lang('global.action')</th>
                 </tr>
                 </thead>
             </table>
