@@ -181,16 +181,13 @@ class ThecaoController extends Controller
             ->editColumn('menhgia', function ($thecao) {
                 return number_format($thecao->menhgia);
             })
+            ->editColumn('status', function ($thecao) {
+                return ($thecao->status == 1) ? trans('global.active_icon') : trans('global.deactive_icon');
+            })
             ->editColumn('created_at', function ($thecao) {
                 return date('H:i | d-m-Y', strtotime($thecao->created_at));
             })
-            ->editColumn('content', function ($thecao) {
-                return !is_null($thecao->content) ? $thecao->content : trans('global.not_updated');
-            })
-            ->editColumn('status', function ($thecao) {
-                return ($thecao->status == 1) ? trans('global.show') : trans('global.hide');
-            })
-            ->rawColumns(['action'])
+            ->rawColumns(['action','status'])
             ->toJson();
     }
 }

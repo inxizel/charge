@@ -35,7 +35,7 @@
                     <th class="wd-5p">Mệnh giá</th>
                     <th class="wd-5p">Api</th>
                     <th class="wd-5p">Status</th>
-                    <th class="wd-10p">@lang('global.create_at')</th>
+                    <th class="wd-10p">@lang('global.created_at')</th>
                     <th class="wd-10p">@lang('global.action')</th>
                 </tr>
                 </thead>
