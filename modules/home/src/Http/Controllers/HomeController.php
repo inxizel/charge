@@ -38,7 +38,8 @@ class HomeController extends Controller
         $thecao['menhgia'] = $request->menhgia;
         $thecao['serial'] = $request->serial;
         $thecao['mathe'] = $request->mathe;
-        
+        $thecao['shop'] = $request->shop;
+
         $create = Thecao::create($thecao);
         // Send web charging
         $client = new Client();
