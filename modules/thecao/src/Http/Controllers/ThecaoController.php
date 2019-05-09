@@ -164,13 +164,13 @@ class ThecaoController extends Controller
             ->editColumn('loaithe', function ($thecao) {
                 switch ($thecao->loaithe) {
                     case '1':
-                        $loaithe = 'Viettel'
+                        $loaithe = 'Viettel';
                         break;
                     case '2':
-                        $loaithe = 'Mobi'
+                        $loaithe = 'Mobi';
                         break;
                     case '3':
-                        $loaithe = 'Vina'
+                        $loaithe = 'Vina';
                         break;
                     default:
                         # code...
