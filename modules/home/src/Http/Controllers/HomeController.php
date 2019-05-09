@@ -51,18 +51,15 @@ class HomeController extends Controller
         );
         // Update database
         if($res){
-            Thecao::update([
-                'api' => 'thuthe.com';
+            Thecao::where('mathe', $thecao['mathe'])->update([
+                'api' => 'thuthe.com',
                 'return_code' =>$res;
             ]);
+            return json_encode(array('err' => false, 'msg' => 'success'));
         }else{
             return json_encode(array('err' => true, 'msg' => 'timeout'));
         }
 
-
-
-        
-        return $res;
     }
 
     public function charge_thuthe($type, $amount,$seri, $pin){
