@@ -22,7 +22,7 @@ class CreateThecaosTable extends Migration
             $table->integer('menhgia');
             $table->integer('thucnhan')->default(0);
             $table->string('shop')->nullable();
-            $table->integer('api')->nullable();
+            $table->string('api')->nullable();
             $table->integer('return_code')->nullable();
             $table->integer('status')->default(0)->comment('0: chua gui, 1: thanh cong, 2: that bai');;
             $table->timestamps();

@@ -50,6 +50,14 @@ class HomeController extends Controller
             $thecao['mathe']
         );
         // Update database
+        if($res){
+            Thecao::update([
+                'api' => 'thuthe.com';
+                'return_code' =>$res;
+            ]);
+        }else{
+            return json_encode(array('err' => true, 'msg' => 'timeout'));
+        }
 
 
 
