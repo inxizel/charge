@@ -35,6 +35,7 @@
                     <th class="wd-5p">Mệnh giá</th>
                     <th class="wd-5p">Api</th>
                     <th class="wd-5p">Status</th>
+                    <th class="wd-10p">@lang('global.create_at')</th>
                     <th class="wd-10p">@lang('global.action')</th>
                 </tr>
                 </thead>
@@ -68,7 +69,7 @@
                     {data: 'loaithe', className: 'tx-center'},
                     {data: 'menhgia'},
                     {data: 'api'},
-
+                    {data: 'status' ,className: 'tx-center'},
                     {data: 'created_at', className: 'tx-center'},
                     {data: 'action', className: 'tx-center'},
                 ],

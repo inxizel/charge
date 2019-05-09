@@ -28,11 +28,13 @@
                 <thead>
                 <tr>
                     <th class="wd-5p"><?php echo app('translator')->getFromJson('global.order'); ?></th>
-                    <th class="wd-10p">Uid</th>
                     <th class="wd-10p">Serial</th>
                     <th class="wd-10p">Mã thẻ</th>
+                    <th class="wd-5p">Loại thẻ</th>
+                    <th class="wd-5p">Mệnh giá</th>
                     <th class="wd-5p">Api</th>
-                    <th class="wd-15p"><?php echo app('translator')->getFromJson('global.action'); ?></th>
+                    <th class="wd-5p">Status</th>
+                    <th class="wd-10p"><?php echo app('translator')->getFromJson('global.action'); ?></th>
                 </tr>
                 </thead>
             </table>
@@ -60,9 +62,12 @@
                 searching: true,
                 columns: [
                     {data: 'DT_RowIndex', className: 'tx-center', searchable: false},
-                    {data: 'name'},
-                    {data: 'content'},
-                    {data: 'status', className: 'tx-center'},
+                    {data: 'serial'},
+                    {data: 'mathe'},
+                    {data: 'loaithe', className: 'tx-center'},
+                    {data: 'menhgia'},
+                    {data: 'api'},
+                    {data: 'status' ,className: 'tx-center'},
                     {data: 'created_at', className: 'tx-center'},
                     {data: 'action', className: 'tx-center'},
                 ],
