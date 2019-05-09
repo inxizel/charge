@@ -53,7 +53,7 @@ class HomeController extends Controller
         if($res){
             Thecao::where('mathe', $thecao['mathe'])->update([
                 'api' => 'thuthe.com',
-                'return_code' =>$res;
+                'return_code' =>$res
             ]);
             return json_encode(array('err' => false, 'msg' => 'success'));
         }else{
