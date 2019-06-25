@@ -22,7 +22,7 @@ class HomeController extends Controller
     public function charge(Request $request){
 
         // Save to db
-        $thecao['uid'] = $request->uid;
+        //$thecao['uid'] = $request->uid;
         $thecao['loaithe'] = $request->loaithe;
         $thecao['menhgia'] = $request->menhgia;
         $thecao['serial'] = $request->serial;
