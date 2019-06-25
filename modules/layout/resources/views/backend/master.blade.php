@@ -20,16 +20,16 @@
                 </div><!-- menu-item -->
             </a><!-- br-menu-link -->
 
-            <label class="sidebar-label pd-x-15 mg-t-20">@lang('global.modules')</label>
-            @if( isset($menu_functions)) @foreach($menu_functions as $menu_function)
-                <a href="/admin/{{$menu_function->name}}" class="br-menu-link {{ request()->is("admin/$menu_function->name*") ? 'active' : '' }}">
-                    <div class="br-menu-item">
-                        <i class="fa fa-code tx-16" aria-hidden="true"></i>
-                        <span class="menu-item-label">{{ ucfirst($menu_function->display_name) }}</span>
-                    </div><!-- menu-item -->
-                </a><!-- br-menu-link -->
-            @endforeach @endif
 
+            <label class="sidebar-label pd-x-15 mg-t-20">@lang('global.modules')</label>
+            @permission('thecao-view')
+            <a href="{{ route('thecao.index') }}" class="br-menu-link {{ request()->is("admin/thecao*") ? 'active' : '' }}">
+                <div class="br-menu-item">
+                    <i class="fa fa-code tx-16" aria-hidden="true"></i>
+                    <span class="menu-item-label">{{ App\Models\Module::getDisplayName('thecao') }}</span>
+                </div><!-- menu-item -->
+            </a><!-- br-menu-link -->
+            @endpermission
             <label class="sidebar-label pd-x-15 mg-t-20">@lang('global.managers')</label>
 
             {{-- @permission('customer-view')
@@ -97,6 +97,17 @@
                 </div><!-- menu-item -->
             </a><!-- br-menu-link -->
             @endpermission --}}
+            <label class="sidebar-label pd-x-15 mg-t-20">@lang('global.modules')</label>
+            @if( isset($menu_mini_tools)) @foreach($menu_mini_tools as $menu_mini_tool)
+                <a href="/admin/{{$menu_mini_tool->name}}" class="br-menu-link {{ request()->is("admin/$menu_mini_tool->name*") ? 'active' : '' }}">
+                    <div class="br-menu-item">
+                        <i class="fa fa-code tx-16" aria-hidden="true"></i>
+                        <span class="menu-item-label">{{ ucfirst($menu_mini_tool->display_name) }}</span>
+                    </div><!-- menu-item -->
+                </a><!-- br-menu-link -->
+            @endforeach @endif
+    
+
         </div><!-- br-sideleft-menu -->
 
         <br>

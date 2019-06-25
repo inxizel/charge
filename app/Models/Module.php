@@ -206,6 +206,14 @@ class Module extends Model
         return '-- Please activate this module to use --';
     }
 
+    public static function getListMenuMiniTool()
+    {
+        return self::where([
+                        'module_category_id' => 0,
+                        'status'             => 1
+                    ])->orderBy('id', 'desc')->get();
+    }
+
     public static function getListMenuFunction()
     {
         return self::where([

@@ -13,11 +13,17 @@ Route::group(['namespace' => 'Zent\Thecao\Http\Controllers', 'middleware' => ['l
      * Group route admin.
      */
     Route::group(['prefix' => 'admin'], function () {
-        Route::resource('thecao', 'ThecaoController');
-
+        
+        
         Route::prefix('thecao')->group(function () {
+            //Route::get('api','ThecaoController@getListApi')->name('thecao.api');
+
+            
             Route::post('get_list_thecao', 'ThecaoController@getListThecao')->name('thecao.getListThecao');
         });
+        Route::resource('thecao', 'ThecaoController');
+
+
     });
 
     /**

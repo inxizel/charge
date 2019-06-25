@@ -145,5 +145,10 @@ class PermissionsTableSeeder extends Seeder
             'name'          => 'role-permission-update',
             'display_name'  => 'Chỉnh sửa permission role'
         ]);
+        Permission::create([
+            'name'          => 'thecao-view',
+            'display_name'  => 'Xem danh sách thẻ cào'
+        ]);
+
     }
 }

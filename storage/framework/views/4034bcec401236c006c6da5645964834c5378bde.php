@@ -20,16 +20,16 @@
                 </div><!-- menu-item -->
             </a><!-- br-menu-link -->
 
-            <label class="sidebar-label pd-x-15 mg-t-20"><?php echo app('translator')->getFromJson('global.modules'); ?></label>
-            <?php if( isset($menu_functions)): ?> <?php $__currentLoopData = $menu_functions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $menu_function): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <a href="/admin/<?php echo e($menu_function->name); ?>" class="br-menu-link <?php echo e(request()->is("admin/$menu_function->name*") ? 'active' : ''); ?>">
-                    <div class="br-menu-item">
-                        <i class="fa fa-code tx-16" aria-hidden="true"></i>
-                        <span class="menu-item-label"><?php echo e(ucfirst($menu_function->display_name)); ?></span>
-                    </div><!-- menu-item -->
-                </a><!-- br-menu-link -->
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> <?php endif; ?>
 
+            <label class="sidebar-label pd-x-15 mg-t-20"><?php echo app('translator')->getFromJson('global.modules'); ?></label>
+            <?php if (\Entrust::can('thecao-view')) : ?>
+            <a href="<?php echo e(route('thecao.index')); ?>" class="br-menu-link <?php echo e(request()->is("admin/thecao*") ? 'active' : ''); ?>">
+                <div class="br-menu-item">
+                    <i class="fa fa-code tx-16" aria-hidden="true"></i>
+                    <span class="menu-item-label"><?php echo e(App\Models\Module::getDisplayName('thecao')); ?></span>
+                </div><!-- menu-item -->
+            </a><!-- br-menu-link -->
+            <?php endif; // Entrust::can ?>
             <label class="sidebar-label pd-x-15 mg-t-20"><?php echo app('translator')->getFromJson('global.managers'); ?></label>
 
             
@@ -67,6 +67,17 @@
           
 
            
+            <label class="sidebar-label pd-x-15 mg-t-20"><?php echo app('translator')->getFromJson('global.modules'); ?></label>
+            <?php if( isset($menu_mini_tools)): ?> <?php $__currentLoopData = $menu_mini_tools; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $menu_mini_tool): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <a href="/admin/<?php echo e($menu_mini_tool->name); ?>" class="br-menu-link <?php echo e(request()->is("admin/$menu_mini_tool->name*") ? 'active' : ''); ?>">
+                    <div class="br-menu-item">
+                        <i class="fa fa-code tx-16" aria-hidden="true"></i>
+                        <span class="menu-item-label"><?php echo e(ucfirst($menu_mini_tool->display_name)); ?></span>
+                    </div><!-- menu-item -->
+                </a><!-- br-menu-link -->
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> <?php endif; ?>
+    
+
         </div><!-- br-sideleft-menu -->
 
         <br>

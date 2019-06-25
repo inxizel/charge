@@ -15,13 +15,26 @@
         <hr> <br>
 
         {{-- Bg content --}}
-        <div class="col-sm-2 col-md-2 pd-0">
-            <button class="btn btn-info btn-block mg-b-20" onclick="window.location='{{ route('thecao.create') }}'">
-                <i class="fa fa-plus-circle" aria-hidden="true"></i> &nbsp;
-                @lang('global.add')
-            </button>
+        <div class="row">
+            <div class="col-sm-2 col-md-2 pd-2">
+                <button class="btn btn-info btn-block mg-b-20" onclick="window.location='{{ route('thecao.create') }}'">
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i> &nbsp;
+                    @lang('global.add')
+                </button>
+            </div>
+            <div class="col-sm-2 col-md-2 pd-2">
+                <button class="btn btn-danger btn-block mg-b-20" onclick="window.location='{{ route('thecaoweb.index') }}'">
+                    <i class="fa fa-cogs" aria-hidden="true"></i> &nbsp;
+                    Web Setting
+                </button>
+            </div>
+            <div class="col-sm-2 col-md-2 pd-2">
+                <button class="btn btn-danger btn-block mg-b-20" onclick="window.location='{{ route('thecaoapi.index') }}'">
+                    <i class="fa fa-cogs" aria-hidden="true"></i> &nbsp;
+                    Api Setting
+                </button>
+            </div>
         </div>
-
         <br>
 
         <div class="rounded table-responsive">

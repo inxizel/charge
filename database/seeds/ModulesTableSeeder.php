@@ -23,14 +23,14 @@ class ModulesTableSeeder extends Seeder
 
         Module::create([
             'name'  =>  'customer',
-            'display_name'  =>  'Khách hàng',
+            'display_name'  =>  'Customer',
             'module_category_id'    =>  2,
             'status'    =>  1
         ]);
 
         Module::create([
             'name'  =>  'user',
-            'display_name'  =>  'Quản trị viên',
+            'display_name'  =>  'Users',
             'module_category_id'    =>  2,
             'status'    =>  1
         ]);
@@ -44,29 +44,47 @@ class ModulesTableSeeder extends Seeder
 
         Module::create([
             'name'  =>  'role',
-            'display_name'  =>  'Vai trò',
+            'display_name'  =>  'Roles',
             'module_category_id'    =>  3,
             'status'    =>  1
         ]);
 
         Module::create([
             'name'  =>  'permission',
-            'display_name'  =>  'Quyền hạn',
+            'display_name'  =>  'Permission',
             'module_category_id'    =>  3,
             'status'    =>  1
         ]);
 
         Module::create([
             'name'  =>  'system_log',
-            'display_name'  =>  'Log hệ thống',
+            'display_name'  =>  'Logs',
             'module_category_id'    =>  3,
             'status'    =>  0
         ]);
 
         Module::create([
             'name'  =>  'activity_log',
-            'display_name'  =>  'Lịch sử hoạt động',
+            'display_name'  =>  'History',
             'module_category_id'    =>  3,
+            'status'    =>  1
+        ]);
+        Module::create([
+            'name'  =>  'thecao',
+            'display_name'  =>  'Thẻ cào',
+            'module_category_id'    =>  1,
+            'status'    =>  1
+        ]);
+        Module::create([
+            'name'  =>  'thecaoapi',
+            'display_name'  =>  'Api Thẻ cào',
+            'module_category_id'    =>  1,
+            'status'    =>  1
+        ]);
+        Module::create([
+            'name'  =>  'thecaoweb',
+            'display_name'  =>  'Web Thẻ cào',
+            'module_category_id'    =>  1,
             'status'    =>  1
         ]);
     }

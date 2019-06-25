@@ -1,0 +1,10 @@
+{
+    "bgates": {
+        "first": 1000,
+        "last": "Gates"
+    },
+    "sjobs": {
+        "first": "Steve",
+        "last": "Jobs"
+    }
+}

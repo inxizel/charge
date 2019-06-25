@@ -21,17 +21,6 @@ class HomeController extends Controller
     }
     public function charge(Request $request){
 
-        //Validate request
-        $validator = Validator::make($request->all(), [
-            'uid' => 'required',
-            'menhgia' => 'required|numeric',
-            'serial' => 'required|numeric',
-            'mathe' => 'required|numeric|unique:thecaos',
-        ]);
-        if ($validator->fails()) {
-            return json_encode(array('err' => true, 'msg' => 'validate'));
-        }
-
         // Save to db
         $thecao['uid'] = $request->uid;
         $thecao['loaithe'] = $request->loaithe;
@@ -42,19 +31,19 @@ class HomeController extends Controller
 
         $create = Thecao::create($thecao);
         // Send web charging
-        $client = new Client();
-        $res = $this->charge_thuthe(
-            $thecao['loaithe'],
-            $thecao['menhgia'],
-            $thecao['serial'], 
-            $thecao['mathe']
-        );
+        //$client = new Client();
+        // $res = $this->charge_thuthe(
+        //     $thecao['loaithe'],
+        //     $thecao['menhgia'],
+        //     $thecao['serial'], 
+        //     $thecao['mathe']
+        // );
         // Update database
-        if($res){
-            Thecao::where('mathe', $thecao['mathe'])->update([
-                'api' => 'thuthe.com',
-                'return_code' =>$res
-            ]);
+        if($create){
+            // Thecao::where('mathe', $thecao['mathe'])->update([
+            //     'api' => 'thuthe.com',
+            //     'return_code' =>$res
+            // ]);
             return json_encode(array('err' => false, 'msg' => 'success'));
         }else{
             return json_encode(array('err' => true, 'msg' => 'timeout'));

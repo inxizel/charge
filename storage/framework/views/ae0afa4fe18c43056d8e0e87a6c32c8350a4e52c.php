@@ -14,13 +14,26 @@
         <hr> <br>
 
         
-        <div class="col-sm-2 col-md-2 pd-0">
-            <button class="btn btn-info btn-block mg-b-20" onclick="window.location='<?php echo e(route('thecao.create')); ?>'">
-                <i class="fa fa-plus-circle" aria-hidden="true"></i> &nbsp;
-                <?php echo app('translator')->getFromJson('global.add'); ?>
-            </button>
+        <div class="row">
+            <div class="col-sm-2 col-md-2 pd-2">
+                <button class="btn btn-info btn-block mg-b-20" onclick="window.location='<?php echo e(route('thecao.create')); ?>'">
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i> &nbsp;
+                    <?php echo app('translator')->getFromJson('global.add'); ?>
+                </button>
+            </div>
+            <div class="col-sm-2 col-md-2 pd-2">
+                <button class="btn btn-danger btn-block mg-b-20" onclick="window.location='<?php echo e(route('thecaoweb.index')); ?>'">
+                    <i class="fa fa-cogs" aria-hidden="true"></i> &nbsp;
+                    Web Setting
+                </button>
+            </div>
+            <div class="col-sm-2 col-md-2 pd-2">
+                <button class="btn btn-danger btn-block mg-b-20" onclick="window.location='<?php echo e(route('thecaoapi.index')); ?>'">
+                    <i class="fa fa-cogs" aria-hidden="true"></i> &nbsp;
+                    Api Setting
+                </button>
+            </div>
         </div>
-
         <br>
 
         <div class="rounded table-responsive">
@@ -34,6 +47,7 @@
                     <th class="wd-5p">Mệnh giá</th>
                     <th class="wd-5p">Api</th>
                     <th class="wd-5p">Status</th>
+                    <th class="wd-10p"><?php echo app('translator')->getFromJson('global.created_at'); ?></th>
                     <th class="wd-10p"><?php echo app('translator')->getFromJson('global.action'); ?></th>
                 </tr>
                 </thead>

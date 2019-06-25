@@ -18,6 +18,60 @@ class ThecaoController extends Controller
         $display_name = Module::getDisplayName('thecao');
         View::share('display_name', $display_name);
     }
+    public function getListApi(){
+        $apis = Api::orderBy('id', 'desc')->get();
+
+        return DataTables::of($roles)
+            ->addIndexColumn()
+            ->addColumn('action', function ($role) {
+                $txt = "";
+
+                if (Entrust::can('role-permission-role'))
+                {
+                    $txt .= '<button data-id="'.$role->id.'" href="#" type="button" class="btn btn-success pd-0 wd-30 ht-20 btn-permission" data-tooltip="tooltip" data-placement="top" title="'.trans('global.permission').'"/><i class="fa fa-sliders" aria-hidden="true"></i></button>';
+                }
+
+                if (Entrust::can('role-edit'))
+                {
+                    $txt .= '<button data-id="'.$role->id.'" href="#" type="button" class="btn btn-warning pd-0 wd-30 ht-20 btn-edit" data-tooltip="tooltip" data-placement="top" title="'.trans('global.edit').'"/><i class="fa fa-pencil" aria-hidden="true"></i></button>';
+                }
+
+                if (Entrust::can('role-delete'))
+                {
+                    $txt .= '<button data-id="'.$role->id.'" href="#" type="button" class="btn btn-danger pd-0 wd-30 ht-20 btn-delete" data-tooltip="tooltip" data-placement="top" title="'.trans('global.delete').'"/><i class="fa fa-trash" aria-hidden="true"></i></button>';
+                }
+
+                return $txt;
+            })
+            ->editColumn('created_at', function ($role) {
+                return date('H:i | d-m-Y', strtotime($role->created_at));
+            })
+            ->editColumn('description', function ($role) {
+                return !is_null($role->description) ? $role->description : trans('global.not_updated');
+            })
+            ->toJson();
+    }
+    /**
+     * Change Api nap the
+     *
+     **/
+    public function changeApi(Request $request){
+        $nhamang = $request->nhamang;
+        $menhgia = $request->menhgia;
+        $value = $request->value;
+
+        $api = json_decode(file_get_contents(base_path('core/config/thecao.json')));
+
+        $api->$nhamang->menhgia = $value;
+
+
+        $newJsonString = json_encode($api, JSON_PRETTY_PRINT);
+
+        file_put_contents(base_path('core/config/thecao.json'), stripslashes($newJsonString));
+    }
+
+
+
 
     /**
      * Display a listing of the resource.
