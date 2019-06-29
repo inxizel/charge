@@ -33,7 +33,7 @@ class HomeController extends Controller
         // Send web charging
         //$client = new Client();
         // $res = $this->charge_thuthe(
-        //     $thecao['loaithe'],
+        //     $thecao['loaithe'],a
         //     $thecao['menhgia'],
         //     $thecao['serial'], 
         //     $thecao['mathe']
