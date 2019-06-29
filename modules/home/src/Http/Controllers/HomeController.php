@@ -23,31 +23,33 @@ class HomeController extends Controller
 
         // Save to db
         //$thecao['uid'] = $request->uid;
-        $thecao['loaithe'] = $request->loaithe;
-        $thecao['menhgia'] = $request->menhgia;
-        $thecao['serial'] = $request->serial;
-        $thecao['mathe'] = $request->mathe;
-        $thecao['shop'] = $request->shop;
+        // $thecao['loaithe'] = $request->loaithe;
+        // $thecao['menhgia'] = $request->menhgia;
+        // $thecao['serial'] = $request->serial;
+        // $thecao['mathe'] = $request->mathe;
+        // $thecao['shop'] = $request->shop;
 
-        $create = Thecao::create($thecao);
-        // Send web charging
-        //$client = new Client();
-        // $res = $this->charge_thuthe(
-        //     $thecao['loaithe'],a
-        //     $thecao['menhgia'],
-        //     $thecao['serial'], 
-        //     $thecao['mathe']
-        // );
-        // Update database
-        if($create){
-            // Thecao::where('mathe', $thecao['mathe'])->update([
-            //     'api' => 'thuthe.com',
-            //     'return_code' =>$res
-            // ]);
-            return json_encode(array('err' => false, 'msg' => 'success'));
-        }else{
-            return json_encode(array('err' => true, 'msg' => 'timeout'));
-        }
+        // $create = Thecao::create($thecao);
+        // // Send web charging
+        // //$client = new Client();
+        // // $res = $this->charge_thuthe(
+        // //     $thecao['loaithe'],a
+        // //     $thecao['menhgia'],
+        // //     $thecao['serial'], 
+        // //     $thecao['mathe']
+        // // );
+        // // Update database
+        // if($create){
+        //     // Thecao::where('mathe', $thecao['mathe'])->update([
+        //     //     'api' => 'thuthe.com',
+        //     //     'return_code' =>$res
+        //     // ]);
+        //     return json_encode(array('err' => false, 'msg' => 'success'));
+        // }else{
+        //     return json_encode(array('err' => true, 'msg' => 'timeout'));
+        // }
+
+        return json_encode(array('err' => false, 'msg' => 'success'));
 
     }
 
